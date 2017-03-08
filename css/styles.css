@@ -1,0 +1,15 @@
+/*font-family: 'Abril Fatface', cursive;
+font-family: 'News Cycle', sans-serif;*/
+.mdl-layout {
+    background-image: url(../img/background.jpg);
+    background-size: cover;
+    background-position: center;
+}
+
+.mdl-cell .mdl-card {
+    width: 100%;
+}
+
+.mdl-card__media img {
+    width: 100%;
+}
