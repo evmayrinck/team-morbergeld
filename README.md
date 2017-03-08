@@ -9,3 +9,4 @@ Page Authorship
 index.html: Elan May Rinck & Audrey Lorberfeld
 styles.css: Elan May Rinck & Audrey Lorberfeld
 museums.html: Elan May Rinck
+museums.js: Elan May Rinck
