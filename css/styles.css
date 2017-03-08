@@ -1,5 +1,9 @@
 /*font-family: 'Abril Fatface', cursive;
 font-family: 'News Cycle', sans-serif;*/
+#map {
+    height: 100vh;
+} 
+
 .mdl-layout {
     background-image: url(../img/background.jpg);
     background-size: cover;
@@ -13,3 +17,5 @@ font-family: 'News Cycle', sans-serif;*/
 .mdl-card__media img {
     width: 100%;
 }
+
+
