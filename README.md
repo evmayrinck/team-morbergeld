@@ -8,5 +8,5 @@ Project Description: We built a prototype site for tourists to New York utilizin
 Page Authorship
 index.html: Elan May Rinck & Audrey Lorberfeld
 styles.css: Elan May Rinck & Audrey Lorberfeld
-museums.html: Elan May Rinck
-museums.js: Elan May Rinck
+ag.html: Elan May Rinck
+ag.js: Elan May Rinck
