@@ -14,15 +14,21 @@ L.tileLayer('https://api.mapbox.com/styles/v1/mapbox/light-v9/tiles/256/{z}/{x}/
 
 var nameIn = document.querySelector("#name-input")
 
-fetch(SODAagAPI)
-    .then(function(response) {
-        return response.json();
-    })
-    .then(function(data) {
+function parseAsJSON(response) {
+    return response.json();
+}
+
+function handleError(err) {
+    console.error(err);
+    alert(err.message);
+}
+
+function createMarker(data) {
         for (var i = 0; i < data.length; i++) {
             var gal = data[i];
             if (gal.the_geom.coordinates != undefined) {
             var latlng = gal.the_geom.coordinates.reverse();
+
             L.marker(latlng).addTo(map)
                 .bindPopup("<h4>"+gal.name+"</h4>"+
                 "<div>"+gal.address1+"</div>"+
@@ -30,16 +36,43 @@ fetch(SODAagAPI)
                 '<div><a href="'+gal.url+'">Website</a></div>');
             }
         }
+    }
+
+function clearMarkers(map) {
+    if (map.hasLayer(marker_layer)) {
+        map.removeLayer(marker_layer);
+    }
+}
+
+function createFilMarker(data) {
+    var nameIn = document.querySelector("#name-input")
+
+    nameIn.addEventListener("input", function(data) {
+        var searchName = nameIn.value.toLowerCase();
+
+        for (var i = 0; i < data.length; i += 1) {
+            var gal = data[i];
+            if (gal.the_geom.coordinates != undefined) {
+                var filGals = data.filter(function(gall) {
+                    var galName = gal.name.toLowerCase();
+                    if (galName.indexOf(searchName) >= 0) {
+                        var latlng = gal.the_geom.coordinates.reverse();
+
+                        L.marker(latlng).addTo(map)
+                            .bindPopup("<h4>"+gal.name+"</h4>"+
+                            "<div>"+gal.address1+"</div>"+
+                            "<div>"+gal.tel+"</div>"+
+                            '<div><a href="'+gal.url+'">Website</a></div>');
+                    }
+                })
+            }
+        }
     })
-    .then(nameIn.addEventListener("input", function() {
-        var searchName = nameIn.nodeValue.toLowerCase();
-        var filGals = data.filter(function(galleries) {
-            var galName = gal.name.toLowerCase();
-            return galName.indexOf(searchName) >= 0;
-            return L.marker(gal.latlng).addTo(map);
-        })
-    }))
-    .catch(function(err) {
-        console.error(err);
-        alert(err.message);
-    });
+}
+
+fetch(SODAagAPI)
+    .then(parseAsJSON)
+    .then(createMarker)
+    .then(clearMarkers)
+    .then(createFilMarker)
+    .catch(handleError);
