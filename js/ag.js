@@ -22,7 +22,10 @@ fetch(SODAagAPI)
             if (gal.the_geom.coordinates != undefined) {
             var latlng = gal.the_geom.coordinates.reverse();
             L.marker(latlng).addTo(map)
-                .bindPopup("<b>"+gal.name+"</b>"+"<br>"+gal.address1+"<br>"+gal.tel+"<br>"+gal.url);
+                .bindPopup("<h4>"+gal.name+"</h4>"+
+                "<div>"+gal.address1+"</div>"+
+                "<div>"+gal.tel+"</div>"+
+                '<div><a href="'+gal.url+'">Website</a></div>');
             }
         }
     })
