@@ -4,35 +4,29 @@
 //API can be found at https://dev.socrata.com/foundry/data.cityofnewyork.us/43hw-uvdj
 var SODAagAPI = "https://data.cityofnewyork.us/resource/43hw-uvdj.json?$$app_token=dNjo0bVaaQvP9GEFDkHGujiRG";
 
-var osmTiles = {
-    url: "http://{s}.tile.osm.org/{z}/{x}/{y}.png",
-    attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
-};
+var map = L.map('map').setView([40.7850, -73.9682], 13);
 
-var nyCoords = [40.7850, -73.9682];
-
-var defaultZoom = 12;
-
-var map = L.map("map").setView(nyCoords, defaultZoom);
-L.tileLayer(osmTiles.url, {
-    attribution: osmTiles.attribution
+L.tileLayer('https://api.mapbox.com/styles/v1/mapbox/light-v9/tiles/256/{z}/{x}/{y}?access_token=pk.eyJ1IjoiZXZtYXlyaW5jayIsImEiOiJjajAxaXBja3QwNzhmMndsczk4NnlteG9qIn0.9JNK9Zq_C3I43Uqw4x0KBA', {
+    attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="http://mapbox.com">Mapbox</a>',
+    maxZoom: 18,
+    accessToken: 'pk.eyJ1IjoiZXZtYXlyaW5jayIsImEiOiJjajAxaXBja3QwNzhmMndsczk4NnlteG9qIn0.9JNK9Zq_C3I43Uqw4x0KBA'
 }).addTo(map);
 
-fetch(SODAagAPI)
+/* fetch(SODAagAPI)
     .then(function(response) {
         return response.json();
     })
     .then(function(data) {
         for (var i = 0; i < data.length; i++) {
             var gal = data[i];
-            if (gal.the_geom != undefined) {
-                L.marker(gal.the_geom.coordinates).addTo(map)
-                    .bindPopup("<h3>"+gal.name+"</h3>"+gal.address1+/*"<br>"+gal.address2+"<br>"+*/gal.tel+"<br>"+gal.url)
-                    .openPopup();
+            if (gal.the_geom.coordinates != undefined) {
+            L.marker(gal.the_geom.coordinates).addTo(map)
+                .bindPopup("<b>"+gal.name+"</b>"+"<br>"+gal.address1+"<br>"+gal.tel+"<br>"+gal.url)
+                .openPopup();
             }
         }
     })
     .catch(function(err) {
         console.error(err);
         alert(err.message);
-    });
+    }); */
