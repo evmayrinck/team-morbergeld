@@ -12,7 +12,7 @@ L.tileLayer('https://api.mapbox.com/styles/v1/mapbox/light-v9/tiles/256/{z}/{x}/
     accessToken: 'pk.eyJ1IjoiZXZtYXlyaW5jayIsImEiOiJjajAxaXBja3QwNzhmMndsczk4NnlteG9qIn0.9JNK9Zq_C3I43Uqw4x0KBA'
 }).addTo(map);
 
-/* fetch(SODAagAPI)
+fetch(SODAagAPI)
     .then(function(response) {
         return response.json();
     })
@@ -20,13 +20,13 @@ L.tileLayer('https://api.mapbox.com/styles/v1/mapbox/light-v9/tiles/256/{z}/{x}/
         for (var i = 0; i < data.length; i++) {
             var gal = data[i];
             if (gal.the_geom.coordinates != undefined) {
-            L.marker(gal.the_geom.coordinates).addTo(map)
-                .bindPopup("<b>"+gal.name+"</b>"+"<br>"+gal.address1+"<br>"+gal.tel+"<br>"+gal.url)
-                .openPopup();
+            var latlng = gal.the_geom.coordinates.reverse();
+            L.marker(latlng).addTo(map)
+                .bindPopup("<b>"+gal.name+"</b>"+"<br>"+gal.address1+"<br>"+gal.tel+"<br>"+gal.url);
             }
         }
     })
     .catch(function(err) {
         console.error(err);
         alert(err.message);
-    }); */
+    });
