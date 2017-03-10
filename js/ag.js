@@ -12,41 +12,22 @@ L.tileLayer('https://api.mapbox.com/styles/v1/mapbox/light-v9/tiles/256/{z}/{x}/
     accessToken: 'pk.eyJ1IjoiZXZtYXlyaW5jayIsImEiOiJjajAxaXBja3QwNzhmMndsczk4NnlteG9qIn0.9JNK9Zq_C3I43Uqw4x0KBA'
 }).addTo(map);
 
-var nameIn = document.querySelector("#name-input")
+var userIn = document.querySelector("#user-input")
 
 var records = [];
 
-nameIn.addEventListener("input", function() {
+userIn.addEventListener("input", function() {
     for (var i = 0; i < records.length; i++) {
-	    // Now in your `"input"` event listener, you can loop over that 
-        //`records` array. It will contain one object for each gallery and 
-        //corresponding marker.
- 
-        // If the gallery name matches the string the user typed (the 
-        //`.value` property of the input), then you should add the marker to 
-        // the map. If it doesn't match, you should remove the marker from 
-        //the map.
-        
-        //get the record at index i
 	    var rec = records[i];
-        var searchName = nameIn.value.toLowerCase();
+        var searchIn = userIn.value.toLowerCase();
         var galName = rec.gallery.name.toLowerCase();
         var galAdd = rec.gallery.address1.toLowerCase();
 
-        if ((galName.indexOf(searchName) >= 0) || (galAdd.indexOf(searchName) >= 0)) {
+        if ((galName.indexOf(searchIn) >= 0) || (galAdd.indexOf(searchIn) >= 0)) {
             rec.marker.addTo(map);
         } else {
             rec.marker.removeFrom(map);
         };
-
-
-	    //rec.gallery is the gallery object
-	    //so rec.gallery.name is the gallery name
-        
-
-	    //rec.marker is the Leaflet marker
-	    //so rec.marker.addTo(map) would add the marker to the map
-	    //and rec.marker.removeFrom(map) would remove it from the map
     }
 })
 
