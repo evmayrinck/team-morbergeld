@@ -4,9 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="author" content="Elan May Rinck">
-    <meta name="description" content="Map of WiFi Hotspots in New York City">
-    <meta name="keywords" content="New York, internet, wifi">
-    <title>WiFi Hotspots</title>
+    <meta name="description" content="Map of Theaters New York City">
+    <meta name="keywords" content="New York, entertainment, theaters">
+    <title>Theaters</title>
     <!--leaflet.js-->
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.0.2/dist/leaflet.css" />
     <!--mdl files-->
@@ -22,7 +22,15 @@
         <header class="mdl-layout__header">
             <div class="mdl-layout-icon"></div>
             <div class="mdl-layout__header-row">
-                <span class="mdl-layout__title">WiFi Hotspots</span> 
+                <span class="mdl-layout__title">Theaters</span> 
+                <div class="mdl-layout-spacer"></div>
+                <!--filtering container-->
+            </div>
+            <div class="mdl-layout__header-row">
+                <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                    <input class="mdl-textfield__input" type="text" id="user-input">
+                    <label class="mdl-textfield__label" for="user-input">Search by name or address</label>
+                </div>     
             </div>
         </header>
         <div class="mdl-layout__drawer">
@@ -47,7 +55,7 @@
             <script src="https://cdnjs.cloudflare.com/ajax/libs/fetch/2.0.1/fetch.min.js"></script>   
 
             <!--your application script-->
-            <script src="../js/wifi.js"></script>
+            <script src="../js/theaters.js"></script>
 
         </main>
 
