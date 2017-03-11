@@ -16,12 +16,16 @@
     width: 100%;
 }
 
-
 .mdl-textfield__label {
     color:white;
     font-style: italic;
+    padding-left: 30px;
 }
 
 .mdl-textfield__input {
     color:white;
+}
+
+.mdl-layout__title {
+    padding-right:50px;
 }
