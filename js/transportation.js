@@ -16,7 +16,7 @@ function renderBridgeRow(bridge) {
     //create and append the <td> elements
     tr.appendChild(renderBridgeProps(bridge.name));
     tr.appendChild(renderBridgeProps(bridge.verbal_rating));
-    tr.appendChild(renderBridgeProps(bridge.numerical_rating, true));
+    //tr.appendChild(renderBridgeProps(bridge.numerical_rating, true));
 
     //return the table row to the caller
     return tr;
