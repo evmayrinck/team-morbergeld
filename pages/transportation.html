@@ -18,27 +18,14 @@
     <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
         <header class="mdl-layout__header">
             <div class="mdl-layout-icon"></div>
-            <div class="mdl-layout__header-row">
-                <span class="mdl-layout__title">Transportation</span>
-                <div class="mdl-layout-spacer"></div>
-                <div class="mdl-layout__header-row">
-                <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                    <input class="mdl-textfield__input" type="text" id="user-input">
-                    <label class="mdl-textfield__label" for="user-input">Search by name or rating</label>
-                </div> 
-                <nav class="mdl-navigation mdl-layout--large-screen-only">
-                    <a class="mdl-navigation__link" href="../index.html">Home</a>
-                    <a class="mdl-navigation__link" href="ag.html">Art Galleries</a>
-                    <a class="mdl-navigation__link" href="landmarks.html">Landmarks</a>
-                    <a class="mdl-navigation__link" href="theaters.html">Theaters</a>
-                    <a class="mdl-navigation__link" href="transportation.html">Transportation</a>
-                    <a class="mdl-navigation__link" href="wifi.html">WiFi</a>
-                </nav>
-            </div>
-        </header>
-        <div class="mdl-layout__drawer">
-            <span class="mdl-layout__title">Explore New York!</span>
-            <nav class="mdl-navigation">
+            <div class="mdl-layout__header-row"></div>
+            <span class="mdl-layout__title">Transportation</span>
+            <div class="mdl-layout-spacer"></div>
+            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                <input class="mdl-textfield__input" type="text" id="user-input">
+                <label class="mdl-textfield__label" for="user-input">Search by name or rating</label>
+            </div> 
+            <nav class="mdl-navigation mdl-layout--large-screen-only">
                 <a class="mdl-navigation__link" href="../index.html">Home</a>
                 <a class="mdl-navigation__link" href="ag.html">Art Galleries</a>
                 <a class="mdl-navigation__link" href="landmarks.html">Landmarks</a>
@@ -46,22 +33,35 @@
                 <a class="mdl-navigation__link" href="transportation.html">Transportation</a>
                 <a class="mdl-navigation__link" href="wifi.html">WiFi</a>
             </nav>
-        </div>
-        <main class="mdl-layout__content">
-            <table class="mdl-data-table mdl-js-data-table">
-               <thead>
-                   <tr>
-                       <th class="mdl-data-table__cell--non-numeric">Name</th>
-                       <th>Number Rating</th>
-                       <th>General Rating</th>
-                   </tr>
-               </thead>
-               <tbody>
-                   <!-- create the tr and td elements via your JavaScript -->
-               </tbody>
-           </table>
-        </main>
+        </header>
     </div>
+        
+    <div class="mdl-layout__drawer">
+        <span class="mdl-layout__title">Explore New York!</span>
+        <nav class="mdl-navigation">
+            <a class="mdl-navigation__link" href="../index.html">Home</a>
+            <a class="mdl-navigation__link" href="ag.html">Art Galleries</a>
+            <a class="mdl-navigation__link" href="landmarks.html">Landmarks</a>
+            <a class="mdl-navigation__link" href="theaters.html">Theaters</a>
+            <a class="mdl-navigation__link" href="transportation.html">Transportation</a>
+            <a class="mdl-navigation__link" href="wifi.html">WiFi</a>
+        </nav>
+    </div>
+    <main class="mdl-layout__content">
+        <table class="mdl-data-table mdl-js-data-table">
+            <thead>
+                <tr>
+                    <th class="mdl-data-table__cell--non-numeric">Name</th>
+                    <th>Number Rating</th>
+                    <th>General Rating</th>
+                </tr>
+            </thead>
+            <tbody>
+                   <!-- create the tr and td elements via your JavaScript -->
+            </tbody>
+         </table>
+    </main>
+    
 <script src="../js/bridgesArray.js"></script>
 
 <script src="../js/transportation.js"></script>
