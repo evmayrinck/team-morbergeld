@@ -17,13 +17,13 @@
 }
 
 .mdl-textfield__label {
-    color:white;
+    color:black;
     font-style: italic;
     padding-left: 30px;
 }
 
 .mdl-textfield__input {
-    color:white;
+    color:black;
 }
 
 .mdl-layout__title {

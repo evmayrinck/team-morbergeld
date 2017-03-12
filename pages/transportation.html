@@ -21,10 +21,6 @@
             <div class="mdl-layout__header-row">
                 <span class="mdl-layout__title">Transportation</span>
                 <div class="mdl-layout-spacer"></div>
-                <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                    <input class="mdl-textfield__input" type="text" id="user-input">
-                    <label class="mdl-textfield__label" for="user-input">Search by bridge name</label>
-                </div> 
                 <nav class="mdl-navigation mdl-layout--large-screen-only">
                     <a class="mdl-navigation__link" href="../index.html">Home</a>
                     <a class="mdl-navigation__link" href="ag.html">Art Galleries</a>
@@ -47,17 +43,27 @@
             </nav>
         </div>
         <main class="mdl-layout__content">
+            <div class="mdl-grid">
+	        <div class="mdl-cell mdl-cell--6-col">
+                <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                    <input class="mdl-textfield__input" type="text" id="user-input">
+                    <label class="mdl-textfield__label" for="user-input">Search by bridge name</label>
+                </div> 
+            </div>
+            <div class="mdl-cell mdl-cell--6-col">
             <table class="mdl-data-table mdl-js-data-table">
                <thead>
                    <tr>
-                       <th class="mdl-data-table__cell--non-numeric">Name</th>
-                       <th>Rating</th>
+                       <th class="mdl-data-table__cell--non-numeric">Bridge Name</th>
+                       <th>Condition Rating</th>
                    </tr>
                </thead>
                <tbody>
                    <!-- create the tr and td elements via your JavaScript -->
                </tbody>
            </table>
+           </div>
+           </div>
         </main>
     </div>
 <script src="../js/bridgesArray.js"></script>
