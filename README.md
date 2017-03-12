@@ -10,5 +10,11 @@ index.html: Elan May Rinck & Audrey Lorberfeld
 styles.css: Elan May Rinck & Audrey Lorberfeld
 ag.html: Elan May Rinck
 ag.js: Elan May Rinck
+landmarks.html: Elan May Rinck
+lm.js: Elan May Rinck
+theaters.html: Elan May Rinck
+theaters.js: Elan May Rinck
 transportation.html: Audrey Lorberfeld
 transportation.js: Audrey Lorberfeld
+wifi.html: Elan May Rinck
+wifi.js: Elan May Rinck
