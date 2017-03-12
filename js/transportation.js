@@ -11,7 +11,7 @@ function renderBridgeProps(value, nonNumeric){
 
 function renderBridgeRow(bridge) {
     var tr = document.createElement("tr");
-    tr.appendChild(renderBridgeProps(bridge.name));
+    tr.appendChild(renderBridgeProps(bridge.name, true));
     tr.appendChild(renderBridgeProps(bridge.verbal_rating));
     return tr;
 };
